@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <img alt="Todo List" src=".github/capa.png" width="100%" />
+</h1>
 
-## Getting Started
+<h3 align="center">
+  DASHBOARD APP
+</h3>
 
-First, run the development server:
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/matheralvs/dashboard-app?color=%237844e9">
+
+  <a href="https://www.linkedin.com/in/matheralvs/" target="_blank" rel="noopener noreferrer">
+    <img alt="Made by" src="https://img.shields.io/badge/made%20by-matheus-7844e9">
+  </a>
+  
+  <a href="https://github.com/matheralvs/dashboard-app/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/matheralvs/dashboard-app?color=%237844e9">
+  </a>
+
+  <a href="https://github.com/matheralvs/dashboard-app/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/matheralvs/dashboard-app?color=%237844e9">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#-about-the-project">About the project</a> •
+  <a href="#-technologies">Technologies</a> •
+  <a href="#-getting-started">Getting started</a> •
+  <a href="#-how-to-contribute">How to contribute</a>
+</p>
+
+## ✅ About the project
+
+Portal para visualizar transações.
+
+## 🚀 Technologies
+
+Technologies that I used to develop this api
+
+- [ReactJS](https://pt-br.reactjs.org/)
+- [NextJS](https://nextjs.org/)
+- [Vite JS](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [JSON Server](https://github.com/typicode/json-server)
+- [Framer Motion](https://www.framer.com/)
+
+## 💻 Getting started
+
+**Clone the project and access the folder**
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+$ git clone https://github.com/matheralvs/dashboard-app.git && cd dashboard-app
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Follow the steps below**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Install the dependencies
+$ pnpm i
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Run json-server for view the transactions
+$ pnpm json-server
 
-## Learn More
+# To finish, run
+$ pnpm dev
 
-To learn more about Next.js, take a look at the following resources:
+# Well done, project is started!
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤔 How to contribute
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+**Make a fork of this repository**
 
-## Deploy on Vercel
+```bash
+# Fork using GitHub official command line
+# If you don't have the GitHub CLI, use the web site to do that.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+$ gh repo fork matheralvs/dashboard-app
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Follow the steps below**
+
+```bash
+# Clone your fork
+$ git clone your-fork-url && cd dashboard-app
+
+# Create a branch with your feature
+$ git checkout -b my-feature
+
+# Make the commit with your changes
+$ git commit -m 'Feature: My new feature'
+
+# Send the code to your remote branch
+$ git push origin my-feature
+```
+
+After your pull request is merged, you can delete your branch.
+
+Made with :purple_heart: by Matheus Alves 🤝 [See my linkedin](https://www.linkedin.com/in/matheralvs/)
