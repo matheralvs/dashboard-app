@@ -1,12 +1,12 @@
-"use client";
+'use client'
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-import Link from "next/link";
+import Link from 'next/link'
 
-import { CircleUser, Menu, Package2, Search } from "lucide-react";
+import { CircleUser, Menu, Package2, Search } from 'lucide-react'
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,31 +14,31 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { cn } from "@/lib/utils";
+} from '@/components/ui/dropdown-menu'
+import { Input } from '@/components/ui/input'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { cn } from '@/lib/utils'
 
 export function Header() {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   const handleScroll = () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    setScrollPosition(scrollTop);
-  };
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    setScrollPosition(scrollTop)
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <header
       className={cn(
-        "sticky top-0 flex h-16 items-center gap-4 bg-primary px-4 md:px-12 z-10 transition-shadow",
-        scrollPosition > 0 && "shadow-lg"
+        'sticky top-0 flex h-16 items-center gap-4 bg-primary px-4 md:px-12 z-10 transition-shadow',
+        scrollPosition > 0 && 'shadow-lg',
       )}
     >
       <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
@@ -141,5 +141,5 @@ export function Header() {
         </DropdownMenu>
       </div>
     </header>
-  );
+  )
 }

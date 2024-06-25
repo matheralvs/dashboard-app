@@ -1,39 +1,39 @@
-import { ArrowDownLeft, ArrowUpRight } from "lucide-react";
+import { ArrowDownLeft, ArrowUpRight } from 'lucide-react'
 
-import { SparkAreaChart } from "@/components/spark-chart";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SparkAreaChart } from '@/components/spark-chart'
+import { Badge } from '@/components/ui/badge'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 const chartdata = [
   {
-    month: "Jan 21",
+    month: 'Jan 21',
     Performance: 4000,
   },
   {
-    month: "Feb 21",
+    month: 'Feb 21',
     Performance: 3000,
   },
   {
-    month: "Mar 21",
+    month: 'Mar 21',
     Performance: 2000,
   },
   {
-    month: "Apr 21",
+    month: 'Apr 21',
     Performance: 2780,
   },
   {
-    month: "May 21",
+    month: 'May 21',
     Performance: 1890,
   },
   {
-    month: "Jun 21",
+    month: 'Jun 21',
     Performance: 2390,
   },
   {
-    month: "Jul 21",
+    month: 'Jul 21',
     Performance: 3490,
   },
-];
+]
 
 export function Statistics() {
   return (
@@ -61,9 +61,9 @@ export function Statistics() {
 
           <SparkAreaChart
             data={chartdata}
-            categories={["Performance"]}
-            index={"month"}
-            colors={["emerald"]}
+            categories={['Performance']}
+            index={'month'}
+            colors={['emerald']}
             className="h-8 w-20 sm:h-10 sm:w-36"
           />
         </CardContent>
@@ -89,14 +89,14 @@ export function Statistics() {
           </div>
           <SparkAreaChart
             data={chartdata}
-            categories={["Performance"]}
-            index={"month"}
-            colors={["emerald"]}
+            categories={['Performance']}
+            index={'month'}
+            colors={['emerald']}
             className="h-8 w-20 sm:h-10 sm:w-36"
             color="violet"
           />
         </CardContent>
       </Card>
     </div>
-  );
+  )
 }

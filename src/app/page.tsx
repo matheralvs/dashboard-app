@@ -1,6 +1,6 @@
-import { Header } from "@/components/header";
-import { Statistics } from "@/components/statistics";
-import { TransactionsCard } from "@/components/transactions-card";
+import { Header } from '@/components/header'
+import { Statistics } from '@/components/statistics'
+import { TransactionsCard } from '@/components/transactions-card'
 
 export default function Home() {
   return (
@@ -14,5 +14,5 @@ export default function Home() {
         </div>
       </main>
     </div>
-  );
+  )
 }

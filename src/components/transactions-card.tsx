@@ -1,17 +1,17 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from 'lucide-react'
 
-import { TransactionsTable } from "@/components/transactions-table";
+import { TransactionsTable } from '@/components/transactions-table'
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card'
 
 export function TransactionsCard() {
   return (
@@ -34,5 +34,5 @@ export function TransactionsCard() {
         <TransactionsTable />
       </CardContent>
     </Card>
-  );
+  )
 }
