@@ -55,12 +55,6 @@ export function Header() {
         >
           Dashboard
         </Link>
-        <Link
-          href="#"
-          className="text-background/80 transition-colors hover:text-background"
-        >
-          Orders
-        </Link>
       </nav>
       <Sheet>
         <SheetTrigger asChild>

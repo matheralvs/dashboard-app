@@ -1,10 +1,9 @@
-import Link from 'next/link'
+'use client'
 
-import { ArrowUpRight } from 'lucide-react'
+import type { ReactNode } from 'react'
 
-import { TransactionsTable } from '@/components/transactions-table'
+import { motion } from 'framer-motion'
 
-import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -12,27 +11,32 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { variants } from '@/motion'
 
-export function TransactionsCard() {
+interface TransactionsCardProps {
+  children: ReactNode
+}
+
+export function TransactionsCard({ children }: TransactionsCardProps) {
   return (
-    <Card className="xl:col-span-2" x-chunk="dashboard-01-chunk-4">
-      <CardHeader className="flex flex-row items-center">
-        <div className="grid gap-2">
-          <CardTitle>Transactions</CardTitle>
-          <CardDescription>
-            Recent transactions from your store.
-          </CardDescription>
-        </div>
-        <Button asChild size="sm" className="ml-auto gap-1">
-          <Link href="#">
-            View All
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </Button>
-      </CardHeader>
-      <CardContent>
-        <TransactionsTable />
-      </CardContent>
-    </Card>
+    <motion.div
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.5, delay: 0.5 }}
+    >
+      <Card className="xl:col-span-2" x-chunk="dashboard-01-chunk-4">
+        <CardHeader className="flex flex-row items-center">
+          <div className="grid gap-2">
+            <CardTitle>Transactions</CardTitle>
+            <CardDescription>
+              Recent transactions from your store.
+            </CardDescription>
+          </div>
+        </CardHeader>
+        <CardContent>{children}</CardContent>
+      </Card>
+    </motion.div>
   )
 }

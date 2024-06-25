@@ -1,43 +1,39 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import { ArrowDownLeft, ArrowUpRight } from 'lucide-react'
 
 import { SparkAreaChart } from '@/components/spark-chart'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import type { Transaction } from '@/dtos/TransactionDTO'
+import { variants } from '@/motion'
 
-const chartdata = [
-  {
-    month: 'Jan 21',
-    Performance: 4000,
-  },
-  {
-    month: 'Feb 21',
-    Performance: 3000,
-  },
-  {
-    month: 'Mar 21',
-    Performance: 2000,
-  },
-  {
-    month: 'Apr 21',
-    Performance: 2780,
-  },
-  {
-    month: 'May 21',
-    Performance: 1890,
-  },
-  {
-    month: 'Jun 21',
-    Performance: 2390,
-  },
-  {
-    month: 'Jul 21',
-    Performance: 3490,
-  },
-]
+interface StatisticsProps {
+  data: Transaction[]
+}
 
-export function Statistics() {
+export function Statistics({ data }: StatisticsProps) {
+  const price = data.reduce((acc, curr) => {
+    return acc + curr.valorTotal
+  }, 0)
+
+  const priceFormatted = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price)
+
+  const qntTransactions = data.length
+
   return (
-    <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-2">
+    <motion.div
+      variants={variants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.5 }}
+      className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-2"
+    >
       <Card
         x-chunk="dashboard-01-chunk-0"
         className="border-l-8 border-l-primary"
@@ -50,19 +46,19 @@ export function Statistics() {
 
         <CardContent className="flex flex-row items-center justify-between">
           <div className="flex flex-col gap-2">
-            <div className="text-2xl font-bold">$45,231.89</div>
+            <div className="text-2xl font-bold">{priceFormatted}</div>
             <div className="text-xs text-muted-foreground flex items-center gap-1">
-              <Badge className="bg-transparent border border-zinc-300 px-2 text-emerald-500 shadow-sm hover:bg-transparent hover:border-emerald-500">
+              <Badge className="bg-emerald-500/20 px-2 text-emerald-500 hover:bg-emerald-500/20">
                 +20.1% <ArrowUpRight className="ml-[2px] h-4 w-4" />
               </Badge>
-              from last month
+              do mês passado
             </div>
           </div>
 
           <SparkAreaChart
-            data={chartdata}
-            categories={['Performance']}
-            index={'month'}
+            data={data}
+            categories={['valorTotal']}
+            index={'data'}
             colors={['emerald']}
             className="h-8 w-20 sm:h-10 sm:w-36"
           />
@@ -79,24 +75,24 @@ export function Statistics() {
         </CardHeader>
         <CardContent className="flex flex-row items-center justify-between">
           <div className="flex flex-col gap-2">
-            <div className="text-2xl font-bold">+2350</div>
+            <div className="text-2xl font-bold">+{qntTransactions}</div>
             <div className="text-xs text-muted-foreground flex items-center gap-1">
-              <Badge className="bg-transparent border border-zinc-300 px-2 text-red-500 shadow-sm hover:bg-transparent hover:border-red-500 flex items-center gap-1">
+              <Badge className="bg-red-500/20 px-2 text-red-500 hover:bg-red-500/20">
                 -180.1% <ArrowDownLeft className="ml-[2px] h-4 w-4" />
               </Badge>
-              from last month
+              do mês passado
             </div>
           </div>
           <SparkAreaChart
-            data={chartdata}
-            categories={['Performance']}
-            index={'month'}
-            colors={['emerald']}
+            data={data}
+            categories={['valorTotal']}
+            index={'data'}
+            colors={['violet']}
             className="h-8 w-20 sm:h-10 sm:w-36"
             color="violet"
           />
         </CardContent>
       </Card>
-    </div>
+    </motion.div>
   )
 }
