@@ -74,7 +74,10 @@ export function TransactionsTable({ data }: TransactionTableProps) {
                 <TableCell className=" md:table-cell">{email}</TableCell>
                 <TableCell>
                   <Badge
-                    className={cn('text-xs', getStatusColor(status))}
+                    className={cn(
+                      'text-xs border-none text-nowrap',
+                      getStatusColor(status),
+                    )}
                     variant="outline"
                   >
                     {status}

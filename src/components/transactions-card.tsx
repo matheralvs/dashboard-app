@@ -29,10 +29,8 @@ export function TransactionsCard({ children }: TransactionsCardProps) {
       <Card className="xl:col-span-2" x-chunk="dashboard-01-chunk-4">
         <CardHeader className="flex flex-row items-center">
           <div className="grid gap-2">
-            <CardTitle>Transactions</CardTitle>
-            <CardDescription>
-              Recent transactions from your store.
-            </CardDescription>
+            <CardTitle>Transações</CardTitle>
+            <CardDescription>Transações recentes da sua loja.</CardDescription>
           </div>
         </CardHeader>
         <CardContent>{children}</CardContent>
