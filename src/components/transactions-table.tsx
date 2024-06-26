@@ -56,7 +56,9 @@ export function TransactionsTable({ data }: TransactionTableProps) {
               status,
             } = transaction
 
-            const productName = produtos.map((product) => product.nome)
+            const productName = produtos
+              .map((product) => product.nome)
+              .join(', ')
 
             const valueFormatted = new Intl.NumberFormat('pt-BR', {
               style: 'currency',
